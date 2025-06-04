@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['test-app-uz.onrender.com']
+ALLOWED_HOSTS = ['blog-4-zv0p.onrender.com']
 
 
 # Application definition
