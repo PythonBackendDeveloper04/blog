@@ -90,4 +90,5 @@ env/
 venv/
 .venv/
 media/
+staticfiles/
 db.sqlite3
