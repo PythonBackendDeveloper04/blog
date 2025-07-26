@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hisobga kirish</title>
+    <link rel="stylesheet" href="{% static 'users/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Hisobga kirish</h2>
+        <form method="post">
+            {% csrf_token %}
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br><br>
+
+            <label for="password">Parol:</label>
+            <input type="password" name="password" required><br><br>
+
+            <button type="submit">Kirish</button>
+        </form>
+        <p>Parolingizni unutdingizmi? <a href="{% url 'password_reset' %}">Parolni tiklash</a></p>
+        <p>Akkauntingiz yo‘qmi? <a href="{% url 'register' %}">Ro‘yxatdan o‘tish</a></p>
+    </div>
+</body>
+</html>

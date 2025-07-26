@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <title>Profilni tahrirlash</title>
+    <link rel="stylesheet" href="{% static 'users/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Profilni tahrirlash</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="username">Foydalanuvchi nomi:</label>
+            <input type="text" id="username" name="username" value="{{ user.username }}" required><br><br>
+
+            <label for="email">Elektron pochta:</label>
+            <input type="email" id="email" name="email" value="{{ user.email }}" required><br><br>
+
+            <label for="first_name">Ism:</label>
+            <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}" required><br><br>
+
+            <label for="last_name">Familiya:</label>
+            <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}" required><br><br>
+
+            <label for="phone_number">Telefon raqam:</label>
+            <input type="text" id="phone_number" name="phone_number" value="{{ user.phone_number }}" required><br><br>
+
+            <label for="profile_image">Profil rasmi:</label>
+            <input type="file" id="profile_image" name="profile_image"><br><br>
+
+            <button type="submit">Saqlash</button>
+        </form>
+        <p><a href="{% url 'profile' %}">Profilga qaytish</a></p>
+    </div>
+</body>
+</html>

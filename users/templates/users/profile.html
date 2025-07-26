@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <title>Profil</title>
+    <link rel="stylesheet" href="{% static 'users/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Profil</h2>
+
+        {% if user.profile_image %}
+            <img src="{{ user.profile_image.url }}" style="width: 45px; border-radius: 50%;">
+        {% else %}
+            <img src="{% static 'posts/images/profile.png' %}" style="width: 45px; border-radius: 50%;">
+        {% endif %}
+        <p>Foydalanuvchi nomi: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Ism: {{ user.first_name }}</p>
+        <p>Familiya: {{ user.last_name }}</p>
+        <p>Telefon raqam: {{ user.phone_number }}</p>
+        <p>Oxirgi kirish vaqti: {{ user.last_login }}</p>
+
+        <p><a href="{% url 'logout' %}">Chiqish</a></p>
+        <p><a href="{% url 'edit_profile' %}">Profilni tahrirlash</a></p>
+    </div>
+</body>
+</html>
